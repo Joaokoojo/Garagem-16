@@ -1,14 +1,24 @@
 extends Node
 
-var total_time := 12.0  # tempo inicial em segundos
+var total_time := 12.3  # Tempo inicial em segundos
 var time_left := total_time
 var scene_changed := false
-var conclusoes = 0;
-var tasksfeitas = 0;
+var conclusoes := 0
+var tasksfeitas := 0
 
-var total_minigames_time := 0.0  # acumula o tempo total dos minigames
+var total_minigames_time := 0.0  # Acumula o tempo total dos minigames
+
+# Lista de cenas onde o tempo deve ficar congelado
+var paused_scenes := [
+	"res://Scenes/Menu/Menu.tscn",
+	"res://Scenes/Menu/Tutorial/Tutorial.tscn"
+]
 
 func _process(delta):
+	var current_scene := get_tree().current_scene
+	if current_scene and current_scene.scene_file_path in paused_scenes:
+		return  # Tempo congelado nesta cena
+
 	if time_left > 0:
 		time_left -= delta
 		time_left = max(time_left, 0)
