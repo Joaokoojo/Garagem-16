@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $TutorialSprite
-@onready var transition_music: AudioStreamPlayer2D = $Intro
 
 var transitioning := false
 
@@ -22,6 +21,10 @@ func _advance_frame():
 		sprite.frame += 1
 	else:
 		transitioning = true
-		transition_music.play()
-		await transition_music.finished  # Espera a música terminar
-		get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")
+		MusicMeneger.play_sequence()
+		MusicMeneger.player.connect("finished", Callable(self, "_on_sequence_finished"))
+
+func _on_sequence_finished():
+	MusicMeneger.player.disconnect("finished", Callable(self, "_on_sequence_finished"))
+	MusicMeneger.play_main()
+	get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")
