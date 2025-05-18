@@ -24,4 +24,4 @@ func _process(delta):
 		last_total_seconds = total_seg
 
 	# Mostra a pontuação no Label2
-	$Label2.text = "Pts: " + str(score)
+	$Label2.text = "Pontos: " + str(score)
