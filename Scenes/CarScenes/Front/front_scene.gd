@@ -29,4 +29,7 @@ func _process(delta):
 		var elapsed = end_time - start_time
 		GlobalTimer.add_minigame_time(elapsed)
 		print("✅ Todos os fogos apagados! Tempo: ", elapsed)
+		GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
+		GlobalTimer.conclusoes += 1  # <--- aqui somamos uma conclusão
+		print("ADICIONOU: ", GlobalTimer.time_left - GlobalTimer.conclusoes)
 		get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")

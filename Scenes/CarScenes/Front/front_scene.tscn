@@ -9,18 +9,18 @@ script = ExtResource("1_e4x8y")
 
 [node name="BG" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(960, 563)
+position = Vector2(965.5, 539.5)
+scale = Vector2(1.16699, 1.0459)
 texture = ExtResource("2_6ungl")
-metadata/_edit_lock_ = true
 
 [node name="SpawnArea" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="SpawnArea"]
-offset_left = 535.0
-offset_top = 339.0
-offset_right = 861.0
-offset_bottom = 626.0
+offset_left = 472.0
+offset_top = 297.0
+offset_right = 1473.0
+offset_bottom = 816.0
 color = Color(1, 0.384314, 0.427451, 0.0784314)
 
 [node name="FireScene" parent="." instance=ExtResource("2_asbkr")]
-position = Vector2(719, 474)
+position = Vector2(-205, 384)

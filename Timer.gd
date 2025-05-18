@@ -3,6 +3,7 @@ extends Node
 var total_time := 30.0  # tempo inicial em segundos
 var time_left := total_time
 var scene_changed := false
+var conclusoes = 0;
 
 var total_minigames_time := 0.0  # acumula o tempo total dos minigames
 
@@ -14,7 +15,7 @@ func _process(delta):
 		if not scene_changed:
 			scene_changed = true
 			print("Tempo acabou! Indo para GameOver")
-			get_tree().change_scene_to_file("res://Scenes/GameOver/game_over.tscn")
+			get_tree().change_scene_to_file("res://Scengame_over.tscn")
 
 func get_time():
 	return time_left
