@@ -10,7 +10,7 @@
 size = Vector2(308, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjy6c"]
-size = Vector2(227, 182)
+size = Vector2(231, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2xe1"]
 size = Vector2(142, 71)
@@ -50,7 +50,9 @@ position = Vector2(436, 619)
 shape = SubResource("RectangleShape2D_ubexo")
 
 [node name="Exclamacao" type="Sprite2D" parent="Frente"]
-position = Vector2(435, 573)
+texture_filter = 1
+position = Vector2(441, 563.5)
+scale = Vector2(1.375, 1.29688)
 texture = ExtResource("4_sjy6c")
 
 [node name="Tras" type="Area2D" parent="."]
@@ -63,11 +65,13 @@ texture = ExtResource("2_ene56")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tras"]
-position = Vector2(1326.5, 533)
+position = Vector2(1328.5, 542)
 shape = SubResource("RectangleShape2D_sjy6c")
 
 [node name="Exclamacao" type="Sprite2D" parent="Tras"]
-position = Vector2(1341, 544)
+texture_filter = 1
+position = Vector2(1339, 509)
+scale = Vector2(1.28125, 1.23438)
 texture = ExtResource("4_sjy6c")
 
 [node name="Farol" type="Area2D" parent="."]
@@ -84,7 +88,9 @@ position = Vector2(310, 697.5)
 shape = SubResource("RectangleShape2D_s2xe1")
 
 [node name="Exclamacao" type="Sprite2D" parent="Farol"]
-position = Vector2(295, 677)
+texture_filter = 1
+position = Vector2(296, 693)
+scale = Vector2(1.15625, 1.07813)
 texture = ExtResource("4_sjy6c")
 
 [node name="Porta" type="Area2D" parent="."]
@@ -101,7 +107,9 @@ position = Vector2(1062, 598.5)
 shape = SubResource("RectangleShape2D_jhhw0")
 
 [node name="Exclamacao" type="Sprite2D" parent="Porta"]
-position = Vector2(1072, 604)
+texture_filter = 1
+position = Vector2(1071.25, 600.25)
+scale = Vector2(1.60937, 1.46094)
 texture = ExtResource("4_sjy6c")
 
 [node name="Roda" type="Area2D" parent="."]
@@ -116,5 +124,7 @@ position = Vector2(689, 764)
 shape = SubResource("CapsuleShape2D_ubexo")
 
 [node name="Exclamacao" type="Sprite2D" parent="Roda"]
-position = Vector2(687, 757)
+texture_filter = 1
+position = Vector2(688, 765)
+scale = Vector2(1.46875, 1.34375)
 texture = ExtResource("4_sjy6c")

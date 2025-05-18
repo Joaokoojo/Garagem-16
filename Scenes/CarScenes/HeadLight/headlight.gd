@@ -80,8 +80,9 @@ func _input(event: InputEvent) -> void:
 
 							if connected_pairs.size() == wire_pairs.size() and not bonus_given:
 								print("🎉 Todos os fios conectados! +10s")
-								if(GlobalTimer.conclusoes > 6):
-									GlobalTimer.time_left += 10 - 6.5
+								GlobalTimer.tasksfeitas += 1
+								if(GlobalTimer.conclusoes > 7):
+									GlobalTimer.time_left += 10 - 7.5
 								else:
 									GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
 									GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão

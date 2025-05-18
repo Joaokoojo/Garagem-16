@@ -24,12 +24,6 @@ func apertar(valor: float):
 
 	if aperto >= 100 and not parafuso_completo:
 		parafuso_completo = true
-		var tempo_gasto = (Time.get_ticks_msec() - tempo_inicio_aperto) / 1000.0
-		var pontos = max(100 - tempo_gasto * 10, 10)  # mínimo 10 pontos
-
-		GlobalTimer.add_score(pontos)  # ✅ Soma os pontos no sistema
-
-		print("✅ Parafuso completo! Tempo: ", tempo_gasto, "s | Pontos: +", pontos)
 
 		if chave:
 			chave.travado = false

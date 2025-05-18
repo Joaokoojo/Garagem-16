@@ -1,12 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuat66mgqgq5h"]
+[gd_scene load_steps=5 format=3 uid="uid://cuat66mgqgq5h"]
 
-[ext_resource type="Texture2D" uid="uid://cnx8cox6q0hcd" path="res://Placeholders/Toro-Bravo-Las-Ventas-Tour-2.png" id="1_y26ei"]
 [ext_resource type="Script" uid="uid://deoity70pcga1" path="res://Scenes/GameOver/GameOver.gd" id="1_yxx3c"]
+[ext_resource type="Texture2D" uid="uid://dm1n563wj1x2k" path="res://Sprites/Carro/Carro Destruído.png" id="2_dncx1"]
+[ext_resource type="Texture2D" uid="uid://ckefitvknkps3" path="res://Sprites/Game Over.png" id="3_78750"]
+[ext_resource type="Texture2D" uid="uid://dmef082t4pg5b" path="res://Sprites/R para reiniciar.png" id="4_apf3g"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_yxx3c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(998.625, 637)
-scale = Vector2(1.98525, 3.445)
-texture = ExtResource("1_y26ei")
+texture_filter = 1
+position = Vector2(990, 487.5)
+scale = Vector2(7.8125, 9.17969)
+texture = ExtResource("2_dncx1")
+metadata/_edit_lock_ = true
+
+[node name="gameoverssss" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(965.5, 553)
+scale = Vector2(10.7227, 18.1719)
+texture = ExtResource("3_78750")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1027, 952)
+scale = Vector2(3.12305, 3.5625)
+texture = ExtResource("4_apf3g")
+metadata/_edit_lock_ = true

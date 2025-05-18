@@ -30,8 +30,9 @@ func _process(delta):
 		var elapsed = end_time - start_time
 		GlobalTimer.add_minigame_time(elapsed)
 		print("✅ Todos os fogos apagados! Tempo: ", elapsed)
-		if(GlobalTimer.conclusoes > 6):
-			GlobalTimer.time_left += 10 - 6.5
+		GlobalTimer.tasksfeitas += 1
+		if(GlobalTimer.conclusoes > 7):
+			GlobalTimer.time_left += 10 - 7.5
 		else:
 			GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
 			GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão

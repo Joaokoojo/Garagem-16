@@ -15,6 +15,7 @@ func _update_exclamations():
 	for name in CLICKABLE_NODES:
 		var excl = get_node(name).get_node_or_null("Exclamacao")
 		if excl:
+			print("APARECEUUUUUUUUUUUUUUUUU")
 			excl.visible = GlobalCarState.exclama_visible.get(name, false)
 
 func _on_area_clicked(viewport, event: InputEvent, shape_idx: int, name: String) -> void:

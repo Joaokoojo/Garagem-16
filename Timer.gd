@@ -1,12 +1,12 @@
 extends Node
 
-var total_time := 30.0  # tempo inicial em segundos
+var total_time := 12.0  # tempo inicial em segundos
 var time_left := total_time
 var scene_changed := false
 var conclusoes = 0;
+var tasksfeitas = 0;
 
 var total_minigames_time := 0.0  # acumula o tempo total dos minigames
-var score := 0  # nova variável para pontos
 
 func _process(delta):
 	if time_left > 0:
@@ -16,6 +16,7 @@ func _process(delta):
 		if not scene_changed:
 			scene_changed = true
 			print("Tempo acabou! Indo para GameOver")
+			Hud.score -= 1
 			get_tree().change_scene_to_file("res://Scenes/GameOver/game_over.tscn")
 
 func get_time():
@@ -31,11 +32,3 @@ func add_minigame_time(t: float) -> void:
 
 func get_total_minigames_time() -> float:
 	return total_minigames_time
-
-# ⭐ Pontuação
-func add_score(pontos: int) -> void:
-	score += pontos
-	print("Pontos somados: ", pontos, " | Total: ", score)
-
-func get_score() -> int:
-	return score

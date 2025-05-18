@@ -31,13 +31,15 @@ func _clean_nearby_cocos(delta):
 
 func _check_win_condition():
 	if cleaned_cocos >= 3:
+		GlobalTimer.tasksfeitas += 1
 		var elapsed = Time.get_ticks_msec() / 1000.0 - start_time
 		print("✅ Todos os cocos limpos! Tempo: ", elapsed, "s")
 
-		GlobalTimer.add_minigame_time(elapsed)  # soma o tempo corretamente na variável da global
-		GlobalTimer.add_score(cleaned_cocos)
-
 		# Se quiser, também pode somar bônus direto no tempo restante:
-		GlobalTimer.time_left += 10
+		if(GlobalTimer.conclusoes > 7):
+			GlobalTimer.time_left += 10 - 7.5
+		else:
+			GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
+			GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão
 
 		get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")
