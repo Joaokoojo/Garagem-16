@@ -3,6 +3,7 @@ extends Node
 var total_time := 30.0  # tempo inicial em segundos
 var time_left := total_time
 var scene_changed := false
+var conclusoes = 0;
 
 var total_minigames_time := 0.0  # acumula o tempo total dos minigames
 var score := 0  # nova variável para pontos

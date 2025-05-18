@@ -1,58 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://b07y72yhcwg1g"]
+[gd_scene load_steps=4 format=3 uid="uid://beqca1drmb638"]
 
-[ext_resource type="Script" uid="uid://d3n2mnjjs86yh" path="res://Scenes/CarScenes/Front/fire_spawner.gd" id="1_asbkr"]
-[ext_resource type="Script" uid="uid://b3emnnws63lv6" path="res://Scenes/CarScenes/Front/fogo_1.gd" id="2_6ungl"]
-[ext_resource type="Texture2D" uid="uid://cnx8cox6q0hcd" path="res://Placeholders/Toro-Bravo-Las-Ventas-Tour-2.png" id="2_wmmt8"]
+[ext_resource type="Script" uid="uid://benjdlliiek2a" path="res://Scenes/CarScenes/Front/front_scene.gd" id="1_e4x8y"]
+[ext_resource type="Texture2D" uid="uid://dbltqfolgdp58" path="res://Sprites/Sprites Menores/Quest Motor/sprite_motor0.png" id="2_6ungl"]
+[ext_resource type="PackedScene" uid="uid://dur0j7vuo5ref" path="res://fire_scene.tscn" id="2_asbkr"]
 
 [node name="FrontScene" type="Node2D"]
+script = ExtResource("1_e4x8y")
 
-[node name="FireSpawner" type="Node2D" parent="."]
-script = ExtResource("1_asbkr")
+[node name="BG" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(965.5, 539.5)
+scale = Vector2(1.16699, 1.0459)
+texture = ExtResource("2_6ungl")
 
-[node name="Fogo1" type="Sprite2D" parent="FireSpawner"]
-position = Vector2(1138, 536)
-scale = Vector2(0.16, 0.3)
-texture = ExtResource("2_wmmt8")
-script = ExtResource("2_6ungl")
+[node name="SpawnArea" type="Node2D" parent="."]
 
-[node name="Fogo2" type="Sprite2D" parent="FireSpawner"]
-position = Vector2(1138, 536)
-scale = Vector2(0.16, 0.3)
-texture = ExtResource("2_wmmt8")
-script = ExtResource("2_6ungl")
+[node name="ColorRect" type="ColorRect" parent="SpawnArea"]
+offset_left = 472.0
+offset_top = 297.0
+offset_right = 1473.0
+offset_bottom = 816.0
+color = Color(1, 0.384314, 0.427451, 0.0784314)
 
-[node name="Fogo3" type="Sprite2D" parent="FireSpawner"]
-position = Vector2(1138, 536)
-scale = Vector2(0.16, 0.3)
-texture = ExtResource("2_wmmt8")
-script = ExtResource("2_6ungl")
-
-[node name="Fogo4" type="Sprite2D" parent="FireSpawner"]
-position = Vector2(1138, 536)
-scale = Vector2(0.16, 0.3)
-texture = ExtResource("2_wmmt8")
-script = ExtResource("2_6ungl")
-
-[node name="Fogo5" type="Sprite2D" parent="FireSpawner"]
-position = Vector2(1138, 536)
-scale = Vector2(0.16, 0.3)
-texture = ExtResource("2_wmmt8")
-script = ExtResource("2_6ungl")
-
-[node name="Fogo6" type="Sprite2D" parent="FireSpawner"]
-position = Vector2(1138, 536)
-scale = Vector2(0.16, 0.3)
-texture = ExtResource("2_wmmt8")
-script = ExtResource("2_6ungl")
-
-[node name="Fogo7" type="Sprite2D" parent="FireSpawner"]
-position = Vector2(1138, 536)
-scale = Vector2(0.16, 0.3)
-texture = ExtResource("2_wmmt8")
-script = ExtResource("2_6ungl")
-
-[node name="Fogo8" type="Sprite2D" parent="FireSpawner"]
-position = Vector2(1138, 536)
-scale = Vector2(0.16, 0.3)
-texture = ExtResource("2_wmmt8")
-script = ExtResource("2_6ungl")
+[node name="FireScene" parent="." instance=ExtResource("2_asbkr")]
+position = Vector2(-205, 384)

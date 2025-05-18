@@ -3,7 +3,7 @@ extends Node
 signal exclamations_updated  # Sinal para avisar que as exclamações mudaram
 
 const CLICKABLE_NODES = ["Frente", "Tras", "Farol", "Porta", "Roda"]
-const COOLDOWN_SECONDS = 30
+const COOLDOWN_SECONDS = 12
 
 var blocked_nodes := {}
 var can_click := false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://nqhnub7issjc"]
 
-[ext_resource type="Texture2D" uid="uid://4rjxb1la44kw" path="res://Placeholders/sr294e3c457f63f.png" id="1_3mqji"]
 [ext_resource type="Script" uid="uid://d07uht7y2tpki" path="res://Scenes/Main/main_scene.gd" id="1_rpqi1"]
+[ext_resource type="Texture2D" uid="uid://cebrk2dbe3x3n" path="res://Sprites/Garagem 16.png" id="2_wgfuq"]
 [ext_resource type="PackedScene" uid="uid://iwrrhdboqd07" path="res://Scenes/CarScript/Car.tscn" id="2_x4av3"]
 
 [node name="MainScene" type="Node2D"]
@@ -9,9 +9,9 @@ script = ExtResource("1_rpqi1")
 
 [node name="BG" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(950.5, 564.5)
-scale = Vector2(3.58167, 2.37833)
-texture = ExtResource("1_3mqji")
+position = Vector2(991.088, 538.7)
+scale = Vector2(0.993018, 0.993888)
+texture = ExtResource("2_wgfuq")
 
 [node name="CarScenes" parent="." instance=ExtResource("2_x4av3")]
 position = Vector2(102, 81)
