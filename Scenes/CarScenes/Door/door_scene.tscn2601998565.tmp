@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b1fniw6gpfaad"]
+
+[node name="DoorScene" type="Node2D"]

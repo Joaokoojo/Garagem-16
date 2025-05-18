@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1fniw6gpfaad"]
+[gd_scene load_steps=6 format=3 uid="uid://b1fniw6gpfaad"]
 
 [ext_resource type="Script" uid="uid://cejlprspnbiaa" path="res://Scenes/CarScenes/Door/door_scene.gd" id="1_3egff"]
-[ext_resource type="Texture2D" uid="uid://cbuf8p6wo6d6q" path="res://Sprites/Sprites Menores/Quest Porta/Sprite Porta.png" id="2_h8hix"]
 [ext_resource type="Texture2D" uid="uid://bkdjree0qq2fa" path="res://Sprites/Sprites Menores/Quest Porta/Cocô de Pombo.png" id="3_h8hix"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q35gn"]
@@ -15,12 +14,6 @@ radius = 118.512
 
 [node name="DoorScene" type="Node2D"]
 script = ExtResource("1_3egff")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(607.75, 262)
-scale = Vector2(16.0664, 20.9414)
-texture = ExtResource("2_h8hix")
 
 [node name="DirtySpot1" type="Area2D" parent="."]
 

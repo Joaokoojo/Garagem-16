@@ -1,69 +1,57 @@
 extends Node2D
 
-const TOTAL_DIRTY_SPOTS = 3
-const CLEAN_THRESHOLD = 100  # quantidade para considerar limpo (pode ajustar)
+const SUJEIRAS = ["DirtySpot1", "DirtySpot2", "DirtySpot3"]
+const LIMPEZA_MAX = 100  # Valor máximo para considerar sujeira limpa
+const LIMPEZA_POR_FRAME = 1  # Quanto aumenta por frame segurando o mouse
 
-var dirty_spots := []
-var cleaning_spot := -1  # índice do local sendo limpo, -1 se nenhum
-var is_cleaning := false
-
-var clean_progress := [0, 0, 0]  # progresso da limpeza de cada sujeira
-
-var start_time := 0.0
+var cleaning_spot: String = null
+var cleaning: bool = false
+var clean_progress := {}
 
 func _ready():
-	# Pega referências das sujeiras
-	dirty_spots = [
-		$DirtySpot1,
-		$DirtySpot2,
-		$DirtySpot3,
-	]
-	start_time = Time.get_ticks_msec() / 1000.0
+	# Inicializa o progresso de limpeza para cada sujeira
+	for spot_name in SUJEIRAS:
+		clean_progress[spot_name] = 0
 
 func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				# verifica se clicou numa sujeira
-				for i in range(TOTAL_DIRTY_SPOTS):
-					var spot = dirty_spots[i]
-					var local_pos = spot.to_local(event.position)
-					var collision_shape = spot.get_node("CollisionShape2D").shape
-					if collision_shape is Shape2D and collision_shape.has_point(local_pos):
-						cleaning_spot = i
-						is_cleaning = true
-						return
-			else:
-				is_cleaning = false
-				cleaning_spot = -1
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			# Verifica se clicou em alguma sujeira
+			for spot_name in SUJEIRAS:
+				var spot = get_node(spot_name)
+				var mouse_pos = spot.get_global_mouse_position()
+				if spot.get_global_rect().has_point(mouse_pos):
+					cleaning_spot = spot_name
+					cleaning = true
+					break
+		else:
+			cleaning = false
+			cleaning_spot = null
 
-func _process(delta):
-	if is_cleaning and cleaning_spot != -1:
-		# aumenta o progresso da limpeza enquanto segura o mouse
-		clean_progress[cleaning_spot] += 50 * delta  # ajusta velocidade de limpeza aqui
+	if event is InputEventMouseMotion:
+		if cleaning and cleaning_spot != null:
+			clean_progress[cleaning_spot] += LIMPEZA_POR_FRAME
+			clean_progress[cleaning_spot] = min(clean_progress[cleaning_spot], LIMPEZA_MAX)
+			_update_dirty_spot(cleaning_spot)
+			_check_all_cleaned()
 
-		if clean_progress[cleaning_spot] >= CLEAN_THRESHOLD:
-			# limpeza concluída da sujeira
-			var spot = dirty_spots[cleaning_spot]
-			spot.queue_free()  # remove a sujeira da cena
-			print("🧽 Sujeira %d limpa!" % cleaning_spot)
+func _update_dirty_spot(spot_name: String) -> void:
+	var spot = get_node(spot_name)
+	# Ajusta a opacidade do Sprite conforme o progresso da limpeza (limpo = transparente)
+	var sprite = spot.get_node("Sprite2D")
+	var alpha = 1.0 - float(clean_progress[spot_name]) / LIMPEZA_MAX
+	sprite.modulate.a = alpha
 
-			cleaning_spot = -1
-			is_cleaning = false
+func _check_all_cleaned() -> void:
+	for spot_name in SUJEIRAS:
+		if clean_progress[spot_name] < LIMPEZA_MAX:
+			return # Ainda não limpo tudo
 
-			# verifica se todas limpas
-			if _all_cleaned():
-				_finish_minigame()
+	# Se chegou aqui, todas limpas:
+	print("✨ Vidro limpo! Voltando para a cena principal.")
+	# Atualize o tempo do minigame se quiser, ex:
+	# var end_time = Time.get_ticks_msec() / 1000.0
+	# var elapsed = end_time - start_time
+	# GlobalTimer.add_minigame_time(elapsed)
 
-func _all_cleaned():
-	for spot in dirty_spots:
-		if spot and spot.is_inside_tree():
-			return false
-	return true
-
-func _finish_minigame():
-	var end_time = Time.get_ticks_msec() / 1000.0
-	var elapsed = end_time - start_time
-	GlobalTimer.add_minigame_time(elapsed)
-	print("✅ Todos os vidros limpos! Tempo: ", elapsed)
 	get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")
