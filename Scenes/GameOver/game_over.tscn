@@ -20,10 +20,10 @@ texture_filter = 1
 position = Vector2(965.5, 553)
 scale = Vector2(10.7227, 18.1719)
 texture = ExtResource("3_78750")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1027, 952)
+position = Vector2(1024, 1015)
 scale = Vector2(3.12305, 3.5625)
 texture = ExtResource("4_apf3g")
-metadata/_edit_lock_ = true
