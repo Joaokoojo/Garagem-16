@@ -20,6 +20,7 @@ GlobalTimer="*res://Timer.gd"
 Hud="*res://Scenes/HUD/HUD.tscn"
 GlobalCarState="*res://GlobalCarState.gd"
 GlobalFireState="*res://GlobalFireState.gd"
+MusicMeneger="*res://Scripts/MusicMeneger.tscn"
 
 [display]
 
