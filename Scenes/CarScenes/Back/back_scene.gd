@@ -8,10 +8,17 @@ var click_counts := {
 }
 
 var start_time := 0.0
+var cursor_normal: Texture2D
+var cursor_click: Texture2D
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN  # Esconde o cursor normal
 	start_time = Time.get_ticks_msec() / 1000.0
+
+	# Carrega as texturas do cursor
+	cursor_normal = load("res://Sprites/Sprites Menores/Quest Traseira/Martelo Dourado/Martelo Dourado1.png")
+	cursor_click = load("res://Sprites/Sprites Menores/Quest Traseira/Martelo Dourado/Martelo Dourado2.PNG")
+	$CustomCursor.texture = cursor_normal
 
 	# Conecta os sinais de clique para cada Area2D
 	for name in click_counts.keys():
@@ -23,6 +30,11 @@ func _ready():
 func _process(delta):
 	$CustomCursor.global_position = get_global_mouse_position()
 
+	# Muda a textura do cursor dependendo do clique
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		$CustomCursor.texture = cursor_click
+	else:
+		$CustomCursor.texture = cursor_normal
 
 func _exit_tree():
 	var elapsed = Time.get_ticks_msec() / 1000.0 - start_time
