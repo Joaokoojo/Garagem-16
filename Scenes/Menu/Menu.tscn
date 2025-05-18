@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://p43le3utah8g" path="res://Sprites/Carinha da História/História do Jogo/Foto 1.png" id="2_l7xyq"]
 [ext_resource type="Texture2D" uid="uid://cvobmbavx37ci" path="res://Sprites/Carinha da História/História do Jogo/Foto 2.png" id="3_h7084"]
 [ext_resource type="Texture2D" uid="uid://co66ctorkn281" path="res://Sprites/Carinha da História/História do Jogo/Foto 3.png" id="4_uw0ty"]
-[ext_resource type="Texture2D" uid="uid://cy3lmunrqkv1r" path="res://Sprites/Carinha da História/História do Jogo/Foto 4.png" id="5_ac4b6"]
+[ext_resource type="Texture2D" uid="uid://hdosqmb1tyd2" path="res://Sprites/Carinha da História/História do Jogo/Foto_4_arrumada.png" id="6_h7084"]
 [ext_resource type="AudioStream" uid="uid://dix337iotuy4f" path="res://musicas_jogo/MUSICA 2.mp3" id="7_h7084"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x2cqt"]
@@ -24,7 +24,7 @@ animations = [{
 "texture": ExtResource("4_uw0ty")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ac4b6")
+"texture": ExtResource("6_h7084")
 }],
 "loop": true,
 "name": &"default",
