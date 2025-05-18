@@ -27,7 +27,7 @@ func _clean_nearby_cocos(delta):
 				if child.modulate.a <= 0.0:
 					child.visible = false
 					cleaned_cocos += 1
-					print("Coco limpo! Pontos: ", cleaned_cocos)
+					print("Coco limpos! Pontos: ", cleaned_cocos)
 
 func _check_win_condition():
 	if cleaned_cocos >= 3:
