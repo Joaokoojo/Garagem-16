@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dix337iotuy4f"
+path="res://.godot/imported/MUSICA 2.mp3-3901e56b1440f642435977dcb40282c5.mp3str"
+
+[deps]
+
+source_file="res://musicas_jogo/MUSICA 2.mp3"
+dest_files=["res://.godot/imported/MUSICA 2.mp3-3901e56b1440f642435977dcb40282c5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

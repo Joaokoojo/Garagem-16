@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg22ph6k01t0s"]
+[gd_scene load_steps=7 format=3 uid="uid://dg22ph6k01t0s"]
 
 [ext_resource type="Texture2D" uid="uid://c3ovs7hcdi66y" path="res://Sprites/Menu_Tutorial/tt1.jpg" id="1_a7sfj"]
 [ext_resource type="Script" uid="uid://gsqmfmi11pru" path="res://Scenes/Menu/Tutorial/tutorial.gd" id="1_s5ygo"]
 [ext_resource type="Texture2D" uid="uid://do2vmrr64qgwm" path="res://Sprites/Menu_Tutorial/tt2.jpg" id="2_s5ygo"]
 [ext_resource type="Texture2D" uid="uid://j1ovkrwc31uk" path="res://Sprites/Menu_Tutorial/tt3.jpg" id="3_4ygto"]
+[ext_resource type="AudioStream" uid="uid://bn1uyclti6qcr" path="res://musicas_jogo/Intro.wav" id="5_4ygto"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_afs67"]
 animations = [{
@@ -29,3 +30,6 @@ script = ExtResource("1_s5ygo")
 position = Vector2(989.75, 542.25)
 scale = Vector2(1.85509, 0.815926)
 sprite_frames = SubResource("SpriteFrames_afs67")
+
+[node name="Intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4ygto")

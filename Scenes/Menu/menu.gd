@@ -1,9 +1,14 @@
 extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $MenuSprite
+@onready var intro_music: AudioStreamPlayer2D = $Musica2
+
 var target_size := Vector2.ZERO  # Tamanho do primeiro frame
 
 func _ready():
+	# Toca a música de introdução uma vez
+	intro_music.play()
+
 	sprite.play()
 	sprite.frame = 0
 	sprite.pause()
@@ -13,7 +18,6 @@ func _ready():
 	if tex:
 		target_size = tex.get_size()
 
-	# Garante o primeiro frame redimensionado corretamente
 	_update_sprite_scale()
 
 func _input(event):
