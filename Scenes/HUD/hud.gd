@@ -16,7 +16,7 @@ func _process(delta):
 
 	# Se o total em segundos mudou, atualiza a pontuação
 	if total_seg != last_total_seconds:
-		var increment = 1000 - (total_seg * 55)
+		var increment = 1
 		# Evita pontuação negativa
 		if increment < 0:
 			increment = 0
@@ -24,4 +24,4 @@ func _process(delta):
 		last_total_seconds = total_seg
 
 	# Mostra a pontuação no Label2
-	$Label2.text = "Pontos: " + str(score)
+	$Label2.text = "Consertos: " + str(score)
