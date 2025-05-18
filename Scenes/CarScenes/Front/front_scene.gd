@@ -36,10 +36,10 @@ func _process(delta):
 		GlobalTimer.add_minigame_time(elapsed)
 		print("✅ Todos os fogos apagados! Tempo: ", elapsed)
 		GlobalTimer.tasksfeitas += 1
+		GlobalTimer.conclusoes += 0.6
 		if GlobalTimer.conclusoes > 8:
 			GlobalTimer.time_left += 10 - 8.5
 		else:
-			GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
-			GlobalTimer.conclusoes += 0.6
+			GlobalTimer.time_left += 10 - (GlobalTimer.tasksfeitas/4)
 		print("ADICIONOU: ", GlobalTimer.time_left - GlobalTimer.conclusoes)
 		get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")
