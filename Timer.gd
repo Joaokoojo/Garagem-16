@@ -14,7 +14,7 @@ func _process(delta):
 		if not scene_changed:
 			scene_changed = true
 			print("Tempo acabou! Indo para GameOver")
-			get_tree().change_scene_to_file("res://game_over.tscn")
+			get_tree().change_scene_to_file("res://Scenes/GameOver/game_over.tscn")
 
 func get_time():
 	return time_left
