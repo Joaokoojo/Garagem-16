@@ -73,7 +73,7 @@ func _input(event: InputEvent) -> void:
 					var end = pair[1]
 					if end.global_position.distance_to(event.position) < 30:
 						if selected_start == start and not connected_pairs.has(pair):
-							print("✅ Conexão correta!")
+							print("✅ Conexão corretas!")
 							current_line.default_color = Color.GREEN
 							connected_pairs.append(pair)
 							connected_correctly = true
