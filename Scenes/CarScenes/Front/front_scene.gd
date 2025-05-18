@@ -7,7 +7,7 @@ var start_time := 0.0
 
 func _ready():
 	$FireScene/Area2D/Sprite2D.play("default")
-	GlobalFireState.fires_clicked = 0  # Zera contagem ao iniciar
+	GlobalFireState.fires_clicked = 0
 	$SpawnArea.get_child(0).mouse_filter = Control.MOUSE_FILTER_IGNORE
 	start_time = Time.get_ticks_msec() / 1000.0
 	spawn_fires()
@@ -24,6 +24,11 @@ func spawn_fires():
 		)
 		add_child(fire)
 
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if not $SomClique.playing:
+			$SomClique.play()
+
 func _process(delta):
 	if GlobalFireState.fires_clicked >= FIRE_COUNT:
 		var end_time = Time.get_ticks_msec() / 1000.0
@@ -31,10 +36,10 @@ func _process(delta):
 		GlobalTimer.add_minigame_time(elapsed)
 		print("✅ Todos os fogos apagados! Tempo: ", elapsed)
 		GlobalTimer.tasksfeitas += 1
-		if(GlobalTimer.conclusoes > 7):
-			GlobalTimer.time_left += 10 - 7.5
+		if GlobalTimer.conclusoes > 8:
+			GlobalTimer.time_left += 10 - 8.5
 		else:
 			GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
-			GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão
+			GlobalTimer.conclusoes += 0.6
 		print("ADICIONOU: ", GlobalTimer.time_left - GlobalTimer.conclusoes)
 		get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")

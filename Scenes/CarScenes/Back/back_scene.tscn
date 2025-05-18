@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdojyvw4ejem4"]
+[gd_scene load_steps=7 format=3 uid="uid://cdojyvw4ejem4"]
 
 [ext_resource type="Texture2D" uid="uid://bv85tulxt70fs" path="res://Sprites/Quests/Quest Traseira/Carro Atrás.png" id="1_4xnsd"]
 [ext_resource type="Script" uid="uid://ci503r1pe0nqv" path="res://Scenes/CarScenes/Back/back_scene.gd" id="1_p6wyp"]
 [ext_resource type="Texture2D" uid="uid://bifpwbveafi6d" path="res://Sprites/Quests/Quest Traseira/Amasso do Carro.png" id="2_x02jx"]
 [ext_resource type="Texture2D" uid="uid://bsfkofoouks0r" path="res://Sprites/Quests/Quest Traseira/Martelo Dourado.png" id="4_02uk8"]
+[ext_resource type="AudioStream" uid="uid://do0d2uhrhcysl" path="res://musicas_jogo/Martelado.wav" id="5_6suc1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x02jx"]
 radius = 9.15419
@@ -57,3 +58,6 @@ shape = SubResource("CircleShape2D_x02jx")
 texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("4_02uk8")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6suc1")

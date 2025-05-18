@@ -12,15 +12,13 @@ var cursor_normal: Texture2D
 var cursor_click: Texture2D
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN  # Esconde o cursor normal
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	start_time = Time.get_ticks_msec() / 1000.0
 
-	# Carrega as texturas do cursor
 	cursor_normal = load("res://Sprites/Sprites Menores/Quest Traseira/Martelo Dourado/Martelo Dourado1.png")
 	cursor_click = load("res://Sprites/Sprites Menores/Quest Traseira/Martelo Dourado/Martelo Dourado2.PNG")
 	$CustomCursor.texture = cursor_normal
 
-	# Conecta os sinais de clique para cada Area2D
 	for name in click_counts.keys():
 		var clickable = get_node(name)
 		clickable.connect("input_event", Callable(self, "_on_clickable_clicked").bind(name))
@@ -30,7 +28,6 @@ func _ready():
 func _process(delta):
 	$CustomCursor.global_position = get_global_mouse_position()
 
-	# Muda a textura do cursor dependendo do clique
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		$CustomCursor.texture = cursor_click
 	else:
@@ -46,13 +43,16 @@ func _on_clickable_clicked(viewport, event: InputEvent, shape_idx: int, name: St
 		click_counts[name] += 1
 		print(name, " -> ", click_counts[name], "/", CLICKS_REQUIRED)
 
-		# Esconde o objeto se chegou a 10 cliques
+		# 🔊 Toca o som da martelada
+		if $HitSound.playing:
+			$HitSound.stop()
+		$HitSound.play()
+
 		if click_counts[name] >= CLICKS_REQUIRED:
 			var node = get_node(name)
 			if node:
-				node.queue_free()  # remove completamente o objeto da cena
+				node.queue_free()
 
-		# Verifica se todos foram clicados 10 vezes
 		if _check_win_condition():
 			_on_minigame_complete()
 
@@ -64,9 +64,9 @@ func _check_win_condition() -> bool:
 
 func _on_minigame_complete():
 	GlobalTimer.tasksfeitas += 1
-	if(GlobalTimer.conclusoes > 7):
+	if GlobalTimer.conclusoes > 7:
 		GlobalTimer.time_left += 10 - 7.5
 	else:
 		GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
-		GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão
+		GlobalTimer.conclusoes += 0.6
 	get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")

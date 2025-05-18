@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxg02mqv82fm6"]
+[gd_scene load_steps=9 format=3 uid="uid://cxg02mqv82fm6"]
 
 [ext_resource type="Script" uid="uid://drqio14plw8u" path="res://Scenes/CarScenes/Wheel/wheel_scene.gd" id="1_0nvu7"]
 [ext_resource type="Texture2D" uid="uid://bdqwbigr3w3wv" path="res://Sprites/Sprites Menores/Quest Roda/sprite_roda19.png" id="1_imqb2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ucks0d26l0nf" path="res://Scenes/CarScenes/Wheel/chave_de_roda.gd" id="3_00qtp"]
 [ext_resource type="Script" uid="uid://ccxnyt4hpggn" path="res://Scenes/CarScenes/Wheel/parafusos.gd" id="4_00qtp"]
 [ext_resource type="Texture2D" uid="uid://d27ba42g4pna7" path="res://Sprites/Sprites Menores/Quest Roda/Parafuso.png" id="5_0nvu7"]
+[ext_resource type="AudioStream" uid="uid://cutgafs61lrgd" path="res://musicas_jogo/Chave defenda.wav" id="7_twfpg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_twfpg"]
 radius = 31.1448
@@ -14,10 +15,12 @@ radius = 31.1448
 script = ExtResource("1_0nvu7")
 
 [node name="Roda" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(990, 510)
 texture = ExtResource("1_imqb2")
 
 [node name="Chave_de_roda" type="Sprite2D" parent="." groups=["chave"]]
+texture_filter = 1
 position = Vector2(1148, 508)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_d5qru")
@@ -25,11 +28,15 @@ centered = false
 offset = Vector2(-90, -90)
 script = ExtResource("3_00qtp")
 
+[node name="SomRotacao" type="AudioStreamPlayer" parent="Chave_de_roda"]
+stream = ExtResource("7_twfpg")
+
 [node name="Parafuso(Area2D)" type="Area2D" parent="."]
 position = Vector2(910, 429)
 script = ExtResource("4_00qtp")
 
 [node name="Parafuso" type="Sprite2D" parent="Parafuso(Area2D)"]
+texture_filter = 1
 scale = Vector2(5, 5)
 texture = ExtResource("5_0nvu7")
 
@@ -41,6 +48,7 @@ position = Vector2(1071, 431)
 script = ExtResource("4_00qtp")
 
 [node name="Parafuso" type="Sprite2D" parent="Parafuso(Area2D)2"]
+texture_filter = 1
 position = Vector2(1, 0)
 scale = Vector2(5, 5)
 texture = ExtResource("5_0nvu7")
@@ -54,6 +62,7 @@ position = Vector2(910, 590)
 script = ExtResource("4_00qtp")
 
 [node name="Parafuso" type="Sprite2D" parent="Parafuso(Area2D)3"]
+texture_filter = 1
 position = Vector2(-1, 3)
 scale = Vector2(5, 5)
 texture = ExtResource("5_0nvu7")
@@ -66,6 +75,7 @@ position = Vector2(1066.96, 584.879)
 script = ExtResource("4_00qtp")
 
 [node name="Parafuso" type="Sprite2D" parent="Parafuso(Area2D)4"]
+texture_filter = 1
 scale = Vector2(5, 5)
 texture = ExtResource("5_0nvu7")
 

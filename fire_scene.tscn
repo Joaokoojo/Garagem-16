@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbl8n1jng51u0"]
+[gd_scene load_steps=12 format=3 uid="uid://cbl8n1jng51u0"]
 
 [ext_resource type="Script" uid="uid://k45iyguorss6" path="res://area_2d.gd" id="1_a1x06"]
 [ext_resource type="Texture2D" uid="uid://dc68dhadplk54" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado1.png" id="2_hn2og"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cva6ad8y1dgmh" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado5.png" id="6_hcbem"]
 [ext_resource type="Texture2D" uid="uid://bt1cwruq8roho" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado6.png" id="7_r8naj"]
 [ext_resource type="Texture2D" uid="uid://bkugrelip2qtu" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado7.png" id="8_smbp6"]
+[ext_resource type="AudioStream" uid="uid://bivn1rcrxtr6w" path="res://musicas_jogo/extintor.wav" id="9_nlfr0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kr8yy"]
 animations = [{
@@ -55,3 +56,7 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_a1x06")
+
+[node name="apaga" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("9_nlfr0")
+volume_db = 12.234

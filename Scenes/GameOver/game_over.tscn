@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuat66mgqgq5h"]
+[gd_scene load_steps=7 format=3 uid="uid://cuat66mgqgq5h"]
 
 [ext_resource type="Script" uid="uid://deoity70pcga1" path="res://Scenes/GameOver/GameOver.gd" id="1_yxx3c"]
 [ext_resource type="Texture2D" uid="uid://dm1n563wj1x2k" path="res://Sprites/Carro/Carro Destruído.png" id="2_dncx1"]
 [ext_resource type="Texture2D" uid="uid://ckefitvknkps3" path="res://Sprites/Game Over.png" id="3_78750"]
 [ext_resource type="Texture2D" uid="uid://dmef082t4pg5b" path="res://Sprites/R para reiniciar.png" id="4_apf3g"]
+[ext_resource type="Texture2D" uid="uid://bbogpomn483xa" path="res://Sprites/PONTOS.webp" id="5_als7q"]
+[ext_resource type="Script" uid="uid://bipyu3b5me1op" path="res://Scenes/GameOver/label.gd" id="6_fdts5"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_yxx3c")
@@ -27,3 +29,22 @@ texture_filter = 1
 position = Vector2(1024, 1015)
 scale = Vector2(3.12305, 3.5625)
 texture = ExtResource("4_apf3g")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1071, 33)
+scale = Vector2(2.33008, 2.39844)
+texture = ExtResource("5_als7q")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 845.0
+offset_top = -4.0
+offset_right = 1380.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0.8, 1)
+theme_override_font_sizes/font_size = 60
+text = "TAM"
+script = ExtResource("6_fdts5")

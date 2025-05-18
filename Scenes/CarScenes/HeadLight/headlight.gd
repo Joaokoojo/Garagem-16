@@ -29,7 +29,7 @@ func _ready():
 	$WireEnd3.position = possible_positions[2]
 	$WireEnd4.position = possible_positions[3]
 
-	# Agora atualize o array de pares com as novas posições de WireEnd
+	# Atualiza os pares com as posições
 	wire_pairs = [
 		[$WireStart1, $WireEnd1],
 		[$WireStart2, $WireEnd2],
@@ -37,7 +37,7 @@ func _ready():
 		[$WireStart4, $WireEnd4]
 	]
 
-	start_time = Time.get_ticks_msec() / 1000.0  # tempo em segundos no início do minigame
+	start_time = Time.get_ticks_msec() / 1000.0
 	print("Minigame iniciado: conecte os fios!")
 
 func _exit_tree():
@@ -73,21 +73,25 @@ func _input(event: InputEvent) -> void:
 					var end = pair[1]
 					if end.global_position.distance_to(event.position) < 30:
 						if selected_start == start and not connected_pairs.has(pair):
-							print("✅ Conexão corretas!")
+							print("✅ Conexão correta!")
 							current_line.default_color = Color.GREEN
 							connected_pairs.append(pair)
 							connected_correctly = true
 
+							# 🔊 Toca o som de conexão correta
+							$WireConnectSound.play()
+
 							if connected_pairs.size() == wire_pairs.size() and not bonus_given:
 								print("🎉 Todos os fios conectados! +10s")
 								GlobalTimer.tasksfeitas += 1
-								if(GlobalTimer.conclusoes > 7):
+								if GlobalTimer.conclusoes > 7:
 									GlobalTimer.time_left += 10 - 7.5
 								else:
 									GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
-									GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão
+								GlobalTimer.conclusoes += 0.6
 								bonus_given = true
 								print("ADICIONOU: ", GlobalTimer.time_left - GlobalTimer.conclusoes)
+								await get_tree().create_timer(0.5).timeout
 								get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")
 
 						else:

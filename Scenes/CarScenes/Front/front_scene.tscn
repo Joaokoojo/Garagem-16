@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b07y72yhcwg1g"]
+[gd_scene load_steps=7 format=3 uid="uid://b07y72yhcwg1g"]
 
 [ext_resource type="Script" uid="uid://benjdlliiek2a" path="res://Scenes/CarScenes/Front/front_scene.gd" id="1_e4x8y"]
 [ext_resource type="Texture2D" uid="uid://dbltqfolgdp58" path="res://Sprites/Sprites Menores/Quest Motor/sprite_motor0.png" id="2_6ungl"]
 [ext_resource type="PackedScene" uid="uid://cbl8n1jng51u0" path="res://fire_scene.tscn" id="2_asbkr"]
 [ext_resource type="Texture2D" uid="uid://bh4lqix56jbso" path="res://Sprites/Sprites Menores/Quest Motor/Extintor Cursor.png" id="4_tptnq"]
 [ext_resource type="Script" uid="uid://cj8kijueqxk6p" path="res://Scenes/CarScenes/Front/extintor.gd" id="5_d380e"]
+[ext_resource type="AudioStream" uid="uid://bivn1rcrxtr6w" path="res://musicas_jogo/extintor.wav" id="6_d380e"]
 
 [node name="FrontScene" type="Node2D"]
 script = ExtResource("1_e4x8y")
@@ -32,3 +33,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("4_tptnq")
 script = ExtResource("5_d380e")
+
+[node name="SomClique" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_d380e")
+volume_db = 16.838
