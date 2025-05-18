@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdojyvw4ejem4"]
+
+[ext_resource type="Texture2D" uid="uid://bv85tulxt70fs" path="res://Sprites/Quests/Quest Traseira/Carro Atrás.png" id="1_4xnsd"]
+[ext_resource type="Script" uid="uid://ci503r1pe0nqv" path="res://Scenes/CarScenes/Back/back_scene.gd" id="1_p6wyp"]
+[ext_resource type="Texture2D" uid="uid://bifpwbveafi6d" path="res://Sprites/Quests/Quest Traseira/Amasso do Carro.png" id="2_x02jx"]
+[ext_resource type="Texture2D" uid="uid://bsfkofoouks0r" path="res://Sprites/Quests/Quest Traseira/Martelo Dourado.png" id="4_02uk8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x02jx"]
+radius = 9.15419
+
+[node name="BackScene" type="Node2D"]
+script = ExtResource("1_p6wyp")
+
+[node name="BG" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(994, 711)
+scale = Vector2(13.8013, 12.8125)
+texture = ExtResource("1_4xnsd")
+
+[node name="Clickable1" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Clickable1"]
+position = Vector2(679, 654)
+scale = Vector2(8.75, 8.78125)
+texture = ExtResource("2_x02jx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable1"]
+position = Vector2(682, 654)
+scale = Vector2(8.75, 8.78125)
+shape = SubResource("CircleShape2D_x02jx")
+
+[node name="Clickable2" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Clickable2"]
+position = Vector2(549, 789)
+scale = Vector2(8.75, 8.78125)
+texture = ExtResource("2_x02jx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable2"]
+position = Vector2(552, 789)
+scale = Vector2(8.75, 8.78125)
+shape = SubResource("CircleShape2D_x02jx")
+
+[node name="Clickable3" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Clickable3"]
+position = Vector2(1330, 587)
+scale = Vector2(8.75, 8.78125)
+texture = ExtResource("2_x02jx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable3"]
+position = Vector2(1330, 587)
+scale = Vector2(8.75, 8.78125)
+shape = SubResource("CircleShape2D_x02jx")
+
+[node name="CustomCursor" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("4_02uk8")

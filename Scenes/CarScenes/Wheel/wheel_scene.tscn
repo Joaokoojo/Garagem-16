@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxg02mqv82fm6"]
+
+[ext_resource type="Texture2D" uid="uid://7qotfktopv6d" path="res://Placeholders/images (2).jpg" id="1_ux7ga"]
+
+[node name="WheelScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(818, 553.5)
+scale = Vector2(3.41298, 2.40487)
+texture = ExtResource("1_ux7ga")

@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://iwrrhdboqd07"]
+
+[ext_resource type="Texture2D" uid="uid://d4cd662sw2md3" path="res://Sprites/Carro/Carro Base.png" id="1_jhhw0"]
+[ext_resource type="Script" uid="uid://dgfaxvcdaqdc1" path="res://CarScript/car.gd" id="1_sjy6c"]
+[ext_resource type="Texture2D" uid="uid://cmu0mad3dl7sc" path="res://Placeholders/Void.png" id="2_ene56"]
+[ext_resource type="Texture2D" uid="uid://b57r2d7l5owy1" path="res://Sprites/Carro/sprite_roda00.png" id="7_8e52i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubexo"]
+size = Vector2(308, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjy6c"]
+size = Vector2(227, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2xe1"]
+size = Vector2(142, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhhw0"]
+size = Vector2(268, 297)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ubexo"]
+radius = 81.0
+height = 162.0
+
+[node name="CarScenes" type="Node2D"]
+script = ExtResource("1_sjy6c")
+
+[node name="Carro" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(844.5, 515.5)
+scale = Vector2(4.97266, 5.38281)
+texture = ExtResource("1_jhhw0")
+metadata/_edit_lock_ = true
+
+[node name="Frente" type="Area2D" parent="."]
+
+[node name="SpriteFrente" type="Sprite2D" parent="Frente"]
+position = Vector2(437.069, 557.821)
+rotation = 3.14159
+scale = Vector2(151.506, -94.5185)
+texture = ExtResource("2_ene56")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frente"]
+position = Vector2(436, 619)
+shape = SubResource("RectangleShape2D_ubexo")
+
+[node name="Tras" type="Area2D" parent="."]
+
+[node name="Tras" type="Sprite2D" parent="Tras"]
+position = Vector2(1327.21, 532.613)
+rotation = 3.14159
+scale = Vector2(-113.062, -90.9295)
+texture = ExtResource("2_ene56")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tras"]
+position = Vector2(1326.5, 533)
+shape = SubResource("RectangleShape2D_sjy6c")
+
+[node name="Farol" type="Area2D" parent="."]
+
+[node name="Farol" type="Sprite2D" parent="Farol"]
+position = Vector2(309.497, 696.962)
+rotation = 3.14159
+scale = Vector2(71.7168, -35.2018)
+texture = ExtResource("2_ene56")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farol"]
+position = Vector2(310, 697.5)
+shape = SubResource("RectangleShape2D_s2xe1")
+
+[node name="Porta" type="Area2D" parent="."]
+
+[node name="SpriteFrente" type="Sprite2D" parent="Porta"]
+position = Vector2(1061.32, 597.455)
+rotation = 3.14159
+scale = Vector2(-131.316, -145.426)
+texture = ExtResource("2_ene56")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta"]
+position = Vector2(1062, 598.5)
+shape = SubResource("RectangleShape2D_jhhw0")
+
+[node name="Roda" type="Area2D" parent="."]
+
+[node name="Roda" type="Sprite2D" parent="Roda"]
+position = Vector2(687, 763)
+scale = Vector2(0.0786133, 0.0748291)
+texture = ExtResource("7_8e52i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roda"]
+position = Vector2(689, 764)
+shape = SubResource("CapsuleShape2D_ubexo")
+
+[node name="Roda2" type="Sprite2D" parent="."]
+position = Vector2(1254, 755)
+scale = Vector2(0.0786133, 0.0748291)
+texture = ExtResource("7_8e52i")

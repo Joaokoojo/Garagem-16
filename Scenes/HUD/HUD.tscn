@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1m7xfujwpts6"]
+
+[ext_resource type="Script" uid="uid://bibc2sayg0es8" path="res://Scenes/HUD/hud.gd" id="1_k5de2"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_k5de2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 968.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 40
+text = "Time"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1498.0
+offset_top = 77.0
+offset_right = 1637.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 60

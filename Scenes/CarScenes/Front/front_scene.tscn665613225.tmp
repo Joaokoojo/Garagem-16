@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b07y72yhcwg1g"]
+
+[ext_resource type="Script" uid="uid://d3n2mnjjs86yh" path="res://Scenes/CarScenes/Front/fire_spawner.gd" id="1_asbkr"]
+[ext_resource type="Script" uid="uid://b3emnnws63lv6" path="res://Scenes/CarScenes/Front/fogo_1.gd" id="2_6ungl"]
+
+[node name="FrontScene" type="Node2D"]
+
+[node name="FireSpawner" type="Node2D" parent="."]
+script = ExtResource("1_asbkr")
+
+[node name="Fogo1" type="Sprite2D" parent="FireSpawner"]
+script = ExtResource("2_6ungl")

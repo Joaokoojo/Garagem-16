@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcbaos6h66ypp"]
+
+[ext_resource type="Script" uid="uid://sgt3lwmtccbs" path="res://Scenes/CarScenes/HeadLight/headlight.gd" id="1_ftcul"]
+[ext_resource type="Texture2D" uid="uid://c3jm7fk24st6v" path="res://Sprites/Quests/Minigame Fios/Fios/sprite_0.png" id="2_0c47i"]
+[ext_resource type="Texture2D" uid="uid://rtqsjp7hybuo" path="res://Sprites/Quests/Minigame Fios/sprite_conector_colorido1.png" id="3_0c47i"]
+[ext_resource type="Texture2D" uid="uid://cxvy4wqppay7" path="res://Sprites/Quests/Minigame Fios/sprite_conector_colorido3.png" id="4_ks546"]
+[ext_resource type="Texture2D" uid="uid://daoa2nx6gbhw1" path="res://Sprites/Quests/Minigame Fios/sprite_conector_colorido2.png" id="5_lxp8j"]
+[ext_resource type="Texture2D" uid="uid://x283ewv275co" path="res://Sprites/Quests/Minigame Fios/sprite_conector_colorido0.png" id="6_7nl3g"]
+
+[sub_resource type="Animation" id="Animation_0c47i"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ks546"]
+_data = {
+&"new_animation": SubResource("Animation_0c47i")
+}
+
+[node name="HLScene" type="Node2D"]
+script = ExtResource("1_ftcul")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(986, 530)
+texture = ExtResource("2_0c47i")
+
+[node name="WireStart1" type="Marker2D" parent="."]
+position = Vector2(816, 368)
+
+[node name="WireEnd1" type="Marker2D" parent="."]
+position = Vector2(1220, 922)
+
+[node name="Sprite2D" type="Sprite2D" parent="WireEnd1"]
+position = Vector2(54, 56)
+texture = ExtResource("3_0c47i")
+
+[node name="WireStart2" type="Marker2D" parent="."]
+position = Vector2(914, 545)
+
+[node name="WireEnd2" type="Marker2D" parent="."]
+position = Vector2(690, 840)
+
+[node name="Sprite2D" type="Sprite2D" parent="WireEnd2"]
+position = Vector2(57, 75)
+texture = ExtResource("4_ks546")
+
+[node name="WireStart3" type="Marker2D" parent="."]
+position = Vector2(1122, 304)
+
+[node name="WireEnd3" type="Marker2D" parent="."]
+position = Vector2(866, 892)
+
+[node name="Sprite2D" type="Sprite2D" parent="WireEnd3"]
+position = Vector2(55, 69)
+texture = ExtResource("5_lxp8j")
+
+[node name="WireStart4" type="Marker2D" parent="."]
+position = Vector2(1227, 331)
+
+[node name="WireEnd4" type="Marker2D" parent="."]
+position = Vector2(1024, 935)
+
+[node name="Sprite2D" type="Sprite2D" parent="WireEnd4"]
+position = Vector2(58, 62)
+texture = ExtResource("6_7nl3g")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(611, 453)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ks546")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="SuccessSprite" type="Sprite2D" parent="Node2D"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://b07y72yhcwg1g"]
+
+[ext_resource type="Script" uid="uid://d3n2mnjjs86yh" path="res://Scenes/CarScenes/Front/fire_spawner.gd" id="1_asbkr"]
+[ext_resource type="Script" uid="uid://b3emnnws63lv6" path="res://Scenes/CarScenes/Front/fogo_1.gd" id="2_6ungl"]
+[ext_resource type="Texture2D" uid="uid://cnx8cox6q0hcd" path="res://Placeholders/Toro-Bravo-Las-Ventas-Tour-2.png" id="2_wmmt8"]
+
+[node name="FrontScene" type="Node2D"]
+
+[node name="FireSpawner" type="Node2D" parent="."]
+script = ExtResource("1_asbkr")
+
+[node name="Fogo1" type="Sprite2D" parent="FireSpawner"]
+position = Vector2(1138, 536)
+scale = Vector2(0.16, 0.3)
+texture = ExtResource("2_wmmt8")
+script = ExtResource("2_6ungl")
+
+[node name="Fogo2" type="Sprite2D" parent="FireSpawner"]
+position = Vector2(1138, 536)
+scale = Vector2(0.16, 0.3)
+texture = ExtResource("2_wmmt8")
+script = ExtResource("2_6ungl")
+
+[node name="Fogo3" type="Sprite2D" parent="FireSpawner"]
+position = Vector2(1138, 536)
+scale = Vector2(0.16, 0.3)
+texture = ExtResource("2_wmmt8")
+script = ExtResource("2_6ungl")
+
+[node name="Fogo4" type="Sprite2D" parent="FireSpawner"]
+position = Vector2(1138, 536)
+scale = Vector2(0.16, 0.3)
+texture = ExtResource("2_wmmt8")
+script = ExtResource("2_6ungl")
+
+[node name="Fogo5" type="Sprite2D" parent="FireSpawner"]
+position = Vector2(1138, 536)
+scale = Vector2(0.16, 0.3)
+texture = ExtResource("2_wmmt8")
+script = ExtResource("2_6ungl")
+
+[node name="Fogo6" type="Sprite2D" parent="FireSpawner"]
+position = Vector2(1138, 536)
+scale = Vector2(0.16, 0.3)
+texture = ExtResource("2_wmmt8")
+script = ExtResource("2_6ungl")
+
+[node name="Fogo7" type="Sprite2D" parent="FireSpawner"]
+position = Vector2(1138, 536)
+scale = Vector2(0.16, 0.3)
+texture = ExtResource("2_wmmt8")
+script = ExtResource("2_6ungl")
+
+[node name="Fogo8" type="Sprite2D" parent="FireSpawner"]
+position = Vector2(1138, 536)
+scale = Vector2(0.16, 0.3)
+texture = ExtResource("2_wmmt8")
+script = ExtResource("2_6ungl")
