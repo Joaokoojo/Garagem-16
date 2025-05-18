@@ -20,9 +20,9 @@ func finalizar_minigame():
 	print("Minigame completo em ", tempo_decorrido, " segundos!")
 	GlobalTimer.tasksfeitas += 1
 	GlobalTimer.conclusoes += 0.6
-	if(GlobalTimer.conclusoes > 8):
-		GlobalTimer.time_left += 12 - 8.5
+	if(GlobalTimer.conclusoes > 6):
+		GlobalTimer.time_left += 12 - 6.5
 	else:
-		GlobalTimer.time_left += 10 - (GlobalTimer.tasksfeitas/4)
+		GlobalTimer.time_left += 10 - (GlobalTimer.tasksfeitas/3)
 
 	get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")

@@ -37,8 +37,8 @@ func _check_win_condition():
 		print("✅ Todos os cocos limpos! Tempo: ", elapsed, "s")
 		GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão
 		# Se quiser, também pode somar bônus direto no tempo restante:
-		if(GlobalTimer.conclusoes > 8):
-			GlobalTimer.total_time += 10 - 8.5
+		if(GlobalTimer.conclusoes > 6):
+			GlobalTimer.total_time += 10 - 6.5
 		else:
-			GlobalTimer.time_left += 10 - (GlobalTimer.tasksfeitas/4)
+			GlobalTimer.time_left += 10 - (GlobalTimer.tasksfeitas/3)
 		get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")

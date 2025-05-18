@@ -85,10 +85,10 @@ func _input(event: InputEvent) -> void:
 								print("🎉 Todos os fios conectados! +10s")
 								GlobalTimer.conclusoes += 0.6
 								GlobalTimer.tasksfeitas += 1
-								if GlobalTimer.conclusoes > 8:
-									GlobalTimer.total_time += 10 - 8.5
+								if GlobalTimer.conclusoes > 6:
+									GlobalTimer.total_time += 10 - 6.5
 								else:
-									GlobalTimer.time_left += 10 - (GlobalTimer.tasksfeitas/4)
+									GlobalTimer.time_left += 10 - (GlobalTimer.tasksfeitas/3)
 								bonus_given = true
 								print("ADICIONOU: ", GlobalTimer.time_left - GlobalTimer.conclusoes)
 								await get_tree().create_timer(0.5).timeout
