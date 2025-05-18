@@ -1,5 +1,59 @@
-[gd_scene format=3 uid="uid://b1fniw6gpfaad"]
+[gd_scene load_steps=7 format=3 uid="uid://b1fniw6gpfaad"]
+
+[ext_resource type="Script" uid="uid://cejlprspnbiaa" path="res://Scenes/CarScenes/Door/door_scene.gd" id="1_3egff"]
+[ext_resource type="Texture2D" uid="uid://cbuf8p6wo6d6q" path="res://Sprites/Sprites Menores/Quest Porta/Sprite Porta.png" id="2_h8hix"]
+[ext_resource type="Texture2D" uid="uid://bkdjree0qq2fa" path="res://Sprites/Sprites Menores/Quest Porta/Cocô de Pombo.png" id="3_h8hix"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q35gn"]
+radius = 123.199
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qmhl"]
+radius = 100.02
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qh5ol"]
+radius = 118.512
 
 [node name="DoorScene" type="Node2D"]
+script = ExtResource("1_3egff")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(607.75, 262)
+scale = Vector2(16.0664, 20.9414)
+texture = ExtResource("2_h8hix")
+
+[node name="DirtySpot1" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="DirtySpot1"]
+texture_filter = 1
+position = Vector2(1305, 163)
+scale = Vector2(13.375, 11.625)
+texture = ExtResource("3_h8hix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtySpot1"]
+position = Vector2(1321, 184)
+shape = SubResource("CircleShape2D_q35gn")
+
+[node name="DirtySpot2" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="DirtySpot2"]
+texture_filter = 1
+position = Vector2(1223, 425)
+scale = Vector2(9.625, 8.5)
+texture = ExtResource("3_h8hix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtySpot2"]
+position = Vector2(1232, 446)
+shape = SubResource("CircleShape2D_8qmhl")
+
+[node name="DirtySpot3" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="DirtySpot3"]
+texture_filter = 1
+position = Vector2(643.25, 249.5)
+scale = Vector2(12.4687, 10.6875)
+texture = ExtResource("3_h8hix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtySpot3"]
+position = Vector2(654, 265)
+shape = SubResource("CircleShape2D_qh5ol")
