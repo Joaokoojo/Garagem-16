@@ -24,7 +24,7 @@ func _ready():
 		add_child(fogo)
 		fogos_ativos.append(fogo)
 		# conecta o signal apagado com callback que recebe o próprio fogo apagado
-		fogo.connect("apagado", Callable(self, "_on_fogo_apagado"))
+		fogo.connect("apagados", Callable(self, "_on_fogo_apagado"))
 
 	queue_redraw()
 
