@@ -6,6 +6,9 @@ var intro_music: AudioStream
 var main_music: AudioStream
 var sequence_music: AudioStream
 
+# Volume inicial em decibéis (por exemplo: -10 dB é mais baixo que 0 dB)
+const VOLUME_INICIAL_DB := -10.0
+
 func _ready():
 	intro_music = load("res://musicas_jogo/MUSICA 2.mp3")
 	main_music = load("res://musicas_jogo/Música inicial.mp3")
@@ -18,25 +21,25 @@ func _ready():
 
 func play_intro():
 	if intro_music and player:
+		player.volume_db = VOLUME_INICIAL_DB
 		player.stream = intro_music
 		player.play()
 
 func play_main():
 	if main_music and player:
+		player.volume_db = VOLUME_INICIAL_DB
 		player.stream = main_music
 		player.play()
-		# Para loop, conectamos o sinal finished para tocar novamente
 		if not player.is_connected("finished", Callable(self, "_on_music_finished")):
 			player.connect("finished", Callable(self, "_on_music_finished"))
 
 func play_sequence():
 	if sequence_music and player:
+		player.volume_db = VOLUME_INICIAL_DB
 		player.stream = sequence_music
 		player.play()
-		# Não faz loop, desconecta se existir
 		if player.is_connected("finished", Callable(self, "_on_music_finished")):
 			player.disconnect("finished", Callable(self, "_on_music_finished"))
 
 func _on_music_finished():
-	# Toca a música novamente para simular loop
 	player.play()
