@@ -1,52 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1fniw6gpfaad"]
+[gd_scene load_steps=5 format=3 uid="uid://b1fniw6gpfaad"]
 
-[ext_resource type="Script" uid="uid://cejlprspnbiaa" path="res://Scenes/CarScenes/Door/door_scene.gd" id="1_3egff"]
+[ext_resource type="Texture2D" uid="uid://cbuf8p6wo6d6q" path="res://Sprites/Sprites Menores/Quest Porta/Sprite Porta.png" id="1_h8hix"]
+[ext_resource type="Texture2D" uid="uid://qbbemtvq8u1x" path="res://Sprites/Sprites Menores/Quest Porta/sprite_paninho0.png" id="2_q35gn"]
+[ext_resource type="Script" uid="uid://byvffj7q7yb46" path="res://Scenes/CarScenes/Door/paninho.gd" id="3_8qmhl"]
 [ext_resource type="Texture2D" uid="uid://bkdjree0qq2fa" path="res://Sprites/Sprites Menores/Quest Porta/Cocô de Pombo.png" id="3_h8hix"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q35gn"]
-radius = 123.199
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8qmhl"]
-radius = 100.02
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qh5ol"]
-radius = 118.512
-
 [node name="DoorScene" type="Node2D"]
-script = ExtResource("1_3egff")
 
-[node name="DirtySpot1" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="DirtySpot1"]
+[node name="Porta" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1305, 163)
-scale = Vector2(13.375, 11.625)
+position = Vector2(499, 303)
+scale = Vector2(25, 25)
+texture = ExtResource("1_h8hix")
+
+[node name="Paninho" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(268, 267)
+texture = ExtResource("2_q35gn")
+script = ExtResource("3_8qmhl")
+
+[node name="Coco" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1681, 274)
+scale = Vector2(20, 20)
 texture = ExtResource("3_h8hix")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtySpot1"]
-position = Vector2(1321, 184)
-shape = SubResource("CircleShape2D_q35gn")
-
-[node name="DirtySpot2" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="DirtySpot2"]
+[node name="Coco2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1223, 425)
-scale = Vector2(9.625, 8.5)
+position = Vector2(810, 278)
+scale = Vector2(20, 20)
 texture = ExtResource("3_h8hix")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtySpot2"]
-position = Vector2(1232, 446)
-shape = SubResource("CircleShape2D_8qmhl")
-
-[node name="DirtySpot3" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="DirtySpot3"]
+[node name="Coco3" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(643.25, 249.5)
-scale = Vector2(12.4687, 10.6875)
+position = Vector2(492, 842)
+scale = Vector2(20, 20)
 texture = ExtResource("3_h8hix")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtySpot3"]
-position = Vector2(654, 265)
-shape = SubResource("CircleShape2D_qh5ol")
