@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b07y72yhcwg1g"]
 
-[ext_resource type="Script" path="res://Scenes/CarScenes/Front/front_scene.gd" id="1_e4x8y"]
+[ext_resource type="Script" uid="uid://benjdlliiek2a" path="res://Scenes/CarScenes/Front/front_scene.gd" id="1_e4x8y"]
 [ext_resource type="Texture2D" uid="uid://dbltqfolgdp58" path="res://Sprites/Sprites Menores/Quest Motor/sprite_motor0.png" id="2_6ungl"]
 [ext_resource type="PackedScene" uid="uid://cbl8n1jng51u0" path="res://fire_scene.tscn" id="2_asbkr"]
 [ext_resource type="Texture2D" uid="uid://bh4lqix56jbso" path="res://Sprites/Sprites Menores/Quest Motor/Extintor Cursor.png" id="4_tptnq"]
@@ -22,12 +22,13 @@ offset_left = 472.0
 offset_top = 297.0
 offset_right = 1473.0
 offset_bottom = 816.0
-color = Color(1, 0.384314, 0.427451, 0.0784314)
+color = Color(1, 0.384314, 0.427451, 0)
 
 [node name="FireScene" parent="." instance=ExtResource("2_asbkr")]
 position = Vector2(-205, 384)
 
 [node name="Extintor" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("4_tptnq")
 script = ExtResource("5_d380e")

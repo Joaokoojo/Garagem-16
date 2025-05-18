@@ -63,6 +63,9 @@ func _check_win_condition() -> bool:
 	return true
 
 func _on_minigame_complete():
-	print("🎉 Todos os objetos foram clicados 10x! +10s")
-	GlobalTimer.time_left += 10
+	if(GlobalTimer.conclusoes > 6):
+		GlobalTimer.time_left += 10 - 6.5
+	else:
+		GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
+		GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão
 	get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")

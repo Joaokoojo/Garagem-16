@@ -80,8 +80,11 @@ func _input(event: InputEvent) -> void:
 
 							if connected_pairs.size() == wire_pairs.size() and not bonus_given:
 								print("🎉 Todos os fios conectados! +10s")
-								GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
-								GlobalTimer.conclusoes += 1  # <--- aqui somamos uma conclusão
+								if(GlobalTimer.conclusoes > 6):
+									GlobalTimer.time_left += 10 - 6.5
+								else:
+									GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
+									GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão
 								bonus_given = true
 								print("ADICIONOU: ", GlobalTimer.time_left - GlobalTimer.conclusoes)
 								get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")

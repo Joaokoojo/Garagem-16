@@ -1,7 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbl8n1jng51u0"]
+[gd_scene load_steps=11 format=3 uid="uid://cbl8n1jng51u0"]
 
-[ext_resource type="Texture2D" uid="uid://1etch8hyopbm" path="res://Sprites/Carinha da História/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado1.png" id="1_3x74r"]
-[ext_resource type="Script" path="res://area_2d.gd" id="1_a1x06"]
+[ext_resource type="Script" uid="uid://k45iyguorss6" path="res://area_2d.gd" id="1_a1x06"]
+[ext_resource type="Texture2D" uid="uid://dc68dhadplk54" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado1.png" id="2_hn2og"]
+[ext_resource type="Texture2D" uid="uid://s34wk7hgtnyh" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado2.png" id="3_nlfr0"]
+[ext_resource type="Texture2D" uid="uid://brfvqpdyg6mlv" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado3.png" id="4_xm6q3"]
+[ext_resource type="Texture2D" uid="uid://pcijtwsswqbt" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado4.png" id="5_vuek6"]
+[ext_resource type="Texture2D" uid="uid://cva6ad8y1dgmh" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado5.png" id="6_hcbem"]
+[ext_resource type="Texture2D" uid="uid://bt1cwruq8roho" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado6.png" id="7_r8naj"]
+[ext_resource type="Texture2D" uid="uid://bkugrelip2qtu" path="res://Sprites/Sprites Menores/Quest Motor/Fogo Animado/Fogo Animado7.png" id="8_smbp6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kr8yy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hn2og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nlfr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xm6q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vuek6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hcbem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r8naj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_smbp6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a1x06"]
 radius = 53.0094
@@ -11,11 +46,12 @@ radius = 53.0094
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_a1x06")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Area2D"]
 texture_filter = 1
-position = Vector2(5, -4)
-scale = Vector2(3, 3)
-texture = ExtResource("1_3x74r")
+position = Vector2(3, -4)
+scale = Vector2(3.15625, 2.84375)
+sprite_frames = SubResource("SpriteFrames_kr8yy")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_a1x06")

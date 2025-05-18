@@ -19,9 +19,11 @@ func finalizar_minigame():
 	var tempo_decorrido = (Time.get_ticks_msec() - tempo_inicio) / 1000.0
 	print("Minigame completo em ", tempo_decorrido, " segundos!")
 
-	GlobalTimer.time_left += 10.0
-	GlobalTimer.add_minigame_time(tempo_decorrido)
-	GlobalTimer.add_score(100)
+	if(GlobalTimer.conclusoes < 6):
+		GlobalTimer.time_left += 10 - 6.5
+	else:
+		GlobalTimer.time_left += 10 - GlobalTimer.conclusoes
+		GlobalTimer.conclusoes += 0.6  # <--- aqui somamos uma conclusão
 
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://Scenes/Main/MainScene.tscn")
