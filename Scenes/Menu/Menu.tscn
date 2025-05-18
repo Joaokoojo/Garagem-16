@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bge3s0ukob2gs"]
+
+[ext_resource type="Script" uid="uid://c68tija65s36o" path="res://Scenes/Menu/menu.gd" id="1_kulhe"]
+[ext_resource type="Texture2D" uid="uid://p43le3utah8g" path="res://Sprites/Carinha da História/História do Jogo/Foto 1.png" id="2_l7xyq"]
+[ext_resource type="Texture2D" uid="uid://cvobmbavx37ci" path="res://Sprites/Carinha da História/História do Jogo/Foto 2.png" id="3_h7084"]
+[ext_resource type="Texture2D" uid="uid://co66ctorkn281" path="res://Sprites/Carinha da História/História do Jogo/Foto 3.png" id="4_uw0ty"]
+[ext_resource type="Texture2D" uid="uid://cy3lmunrqkv1r" path="res://Sprites/Carinha da História/História do Jogo/Foto 4.png" id="5_ac4b6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2cqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l7xyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h7084")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uw0ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ac4b6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_kulhe")
+
+[node name="MenuSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(971.919, 514.799)
+scale = Vector2(1.1387, 1.1304)
+sprite_frames = SubResource("SpriteFrames_x2cqt")
