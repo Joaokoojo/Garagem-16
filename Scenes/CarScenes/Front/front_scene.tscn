@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/CarScenes/Front/front_scene.gd" id="1_e4x8y"]
 [ext_resource type="Texture2D" uid="uid://dbltqfolgdp58" path="res://Sprites/Sprites Menores/Quest Motor/sprite_motor0.png" id="2_6ungl"]
-[ext_resource type="PackedScene" path="res://fire_scene.tscn" id="2_asbkr"]
+[ext_resource type="PackedScene" uid="uid://cbl8n1jng51u0" path="res://fire_scene.tscn" id="2_asbkr"]
 [ext_resource type="Texture2D" uid="uid://bh4lqix56jbso" path="res://Sprites/Sprites Menores/Quest Motor/Extintor Cursor.png" id="4_tptnq"]
 [ext_resource type="Script" uid="uid://cj8kijueqxk6p" path="res://Scenes/CarScenes/Front/extintor.gd" id="5_d380e"]
 
