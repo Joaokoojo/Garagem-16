@@ -24,6 +24,7 @@ func _clean_nearby_cocos(delta):
 			var distance = global_position.distance_to(child.global_position)
 			if distance < detection_radius:
 				child.modulate.a = clamp(child.modulate.a - fade_speed * delta, 0.0, 1.0)
+				$AudioStreamPlayer.play()
 				if child.modulate.a <= 0.0:
 					child.visible = false
 					cleaned_cocos += 1

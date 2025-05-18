@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1fniw6gpfaad"]
+[gd_scene load_steps=6 format=3 uid="uid://b1fniw6gpfaad"]
 
 [ext_resource type="Texture2D" uid="uid://cbuf8p6wo6d6q" path="res://Sprites/Sprites Menores/Quest Porta/Sprite Porta.png" id="1_h8hix"]
 [ext_resource type="Texture2D" uid="uid://qbbemtvq8u1x" path="res://Sprites/Sprites Menores/Quest Porta/sprite_paninho0.png" id="2_q35gn"]
 [ext_resource type="Script" uid="uid://byvffj7q7yb46" path="res://Scenes/CarScenes/Door/paninho.gd" id="3_8qmhl"]
 [ext_resource type="Texture2D" uid="uid://bkdjree0qq2fa" path="res://Sprites/Sprites Menores/Quest Porta/Cocô de Pombo.png" id="3_h8hix"]
+[ext_resource type="AudioStream" uid="uid://cdf8m5bqlb6i1" path="res://musicas_jogo/limpando.wav" id="4_8qmhl"]
 
 [node name="DoorScene" type="Node2D"]
 
@@ -18,6 +19,9 @@ texture_filter = 1
 position = Vector2(268, 267)
 texture = ExtResource("2_q35gn")
 script = ExtResource("3_8qmhl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Paninho"]
+stream = ExtResource("4_8qmhl")
 
 [node name="Coco" type="Sprite2D" parent="."]
 texture_filter = 1
