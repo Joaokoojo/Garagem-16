@@ -1,6 +1,6 @@
 extends Node
 
-var total_time := 12.3  # Tempo inicial em segundos
+var total_time := 12.5  # Tempo inicial em segundos
 var time_left := total_time
 var scene_changed := false
 var conclusoes := 0
