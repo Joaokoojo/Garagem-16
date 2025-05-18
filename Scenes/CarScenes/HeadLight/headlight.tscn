@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcbaos6h66ypp"]
+[gd_scene load_steps=12 format=3 uid="uid://dcbaos6h66ypp"]
 
 [ext_resource type="Script" uid="uid://sgt3lwmtccbs" path="res://Scenes/CarScenes/HeadLight/headlight.gd" id="1_ftcul"]
 [ext_resource type="Texture2D" uid="uid://c3jm7fk24st6v" path="res://Sprites/Quests/Minigame Fios/Fios/sprite_0.png" id="2_0c47i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://x283ewv275co" path="res://Sprites/Quests/Minigame Fios/sprite_conector_colorido0.png" id="6_7nl3g"]
 [ext_resource type="Texture2D" uid="uid://bl0af280fyhdl" path="res://Sprites/Sprites Menores/Quest do Farol/Alicate Cursor Animado/Alicate Cursor2.png" id="7_q7kg1"]
 [ext_resource type="Script" uid="uid://2w881dqfyri5" path="res://Scenes/CarScenes/HeadLight/alicate.gd" id="8_p01p0"]
+[ext_resource type="Texture2D" uid="uid://b7yuw347t03u0" path="res://Sprites/Sprites Menores/Quest do Farol/Alicate Cursor Animado/Alicate Cursor1.png" id="9_p01p0"]
 
 [sub_resource type="Animation" id="Animation_0c47i"]
 resource_name = "new_animation"
@@ -83,3 +84,5 @@ texture = ExtResource("7_q7kg1")
 centered = false
 offset = Vector2(-5, -10)
 script = ExtResource("8_p01p0")
+texture_normal = ExtResource("9_p01p0")
+texture_clicado = ExtResource("7_q7kg1")
