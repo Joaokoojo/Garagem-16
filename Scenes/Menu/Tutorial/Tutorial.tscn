@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg22ph6k01t0s"]
+
+[ext_resource type="Texture2D" uid="uid://c3ovs7hcdi66y" path="res://Sprites/Menu_Tutorial/tt1.jpg" id="1_a7sfj"]
+[ext_resource type="Script" uid="uid://gsqmfmi11pru" path="res://Scenes/Menu/Tutorial/tutorial.gd" id="1_s5ygo"]
+[ext_resource type="Texture2D" uid="uid://do2vmrr64qgwm" path="res://Sprites/Menu_Tutorial/tt2.jpg" id="2_s5ygo"]
+[ext_resource type="Texture2D" uid="uid://j1ovkrwc31uk" path="res://Sprites/Menu_Tutorial/tt3.jpg" id="3_4ygto"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afs67"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a7sfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s5ygo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4ygto")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_s5ygo")
+
+[node name="TutorialSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(989.75, 542.25)
+scale = Vector2(1.85509, 0.815926)
+sprite_frames = SubResource("SpriteFrames_afs67")
