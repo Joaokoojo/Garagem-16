@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bge3s0ukob2gs"]
 
 [ext_resource type="Script" uid="uid://c68tija65s36o" path="res://Scenes/Menu/menu.gd" id="1_kulhe"]
-[ext_resource type="Texture2D" uid="uid://nek582ppmapl" path="res://Sprites/Menu_Tutorial/Menu.jpg" id="2_h7084"]
+[ext_resource type="Texture2D" uid="uid://cwkmftjooksj4" path="res://Sprites/Sprites Menores/22.png" id="2_h7084"]
 [ext_resource type="Texture2D" uid="uid://p43le3utah8g" path="res://Sprites/Carinha da História/História do Jogo/Foto 1.png" id="2_l7xyq"]
 [ext_resource type="Texture2D" uid="uid://cvobmbavx37ci" path="res://Sprites/Carinha da História/História do Jogo/Foto 2.png" id="3_h7084"]
 [ext_resource type="Texture2D" uid="uid://co66ctorkn281" path="res://Sprites/Carinha da História/História do Jogo/Foto 3.png" id="4_uw0ty"]
@@ -35,8 +35,8 @@ animations = [{
 script = ExtResource("1_kulhe")
 
 [node name="MenuSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(988, 526)
-scale = Vector2(1.062, 0.965)
+position = Vector2(993.5, 530)
+scale = Vector2(1.61339, 1.50656)
 sprite_frames = SubResource("SpriteFrames_x2cqt")
 
 [node name="Musica2" type="AudioStreamPlayer2D" parent="."]
